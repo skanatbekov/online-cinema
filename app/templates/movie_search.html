@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+      {% for movie in movie_list %}
+    <div class="card search-card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <img src="{{ url_for('static', filename=movie.image)  }}" alt="{{ movie.name }}">
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.name }}</h5>
+        <p class="card-text">{{ movie.description }}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+{% endblock content %}
